@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserClassSpinner">
+
+    <ImageView
+        android:id="@+id/spinnerIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/identification"
+        app:layout_constraintBottom_toBottomOf="@id/spinnerGH2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGH1start" />
+
+    <ProgressBar
+        android:id="@+id/spinnerProgressBar"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_64sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_9sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/spinnerGH4"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/selectSemester" />
+
+    <Spinner
+        android:id="@+id/selectCourse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/tvSemesterLabel"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/tvCourseLabel" />
+
+    <Spinner
+        android:id="@+id/selectSemester"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/spinnerNextButton"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/tvSemesterLabel" />
+
+    <TextView
+        android:id="@+id/spinnerHelloTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvHello"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_23sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvCreate2"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGH2"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/tvCreate2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/spinnerTextTwo"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/spinnerGH3"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/spinnerHelloTxt" />
+
+    <TextView
+        android:id="@+id/tvCourseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/courseLabel"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_23sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/selectCourse"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGH3"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <TextView
+        android:id="@+id/tvSemesterLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/semesterLabel"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_23sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/selectSemester"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintTop_toBottomOf="@id/selectCourse" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+    />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGV1start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGV1end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinnerGH1start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/spinnerNextButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectCourse"
+        android:backgroundTint="@color/deepSkyBlue"
+        android:text="@string/nextButton"
+        android:textColor="@color/whiteSmoke"
+        android:textSize="@dimen/_15sdp"
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toTopOf="@id/spinnerGH4"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/selectSemester" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/spinnerSkipButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/skipButton"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="100dp"
+        app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
+        app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
+        app:layout_constraintTop_toBottomOf="@id/spinnerGH4"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_1sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

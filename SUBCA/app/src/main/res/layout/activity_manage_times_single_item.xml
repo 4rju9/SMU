@@ -1,0 +1,43 @@
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:layout_marginVertical="@dimen/_8sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tvMT"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:text="@string/tvMain"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/deleteButtonMTSI"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            app:tint="@color/black"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/rounded_corner_black_stroke"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

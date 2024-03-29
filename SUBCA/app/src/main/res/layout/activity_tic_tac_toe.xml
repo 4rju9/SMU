@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".games.TicTacToe">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <TextView
+        android:id="@+id/playerPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/tvPlayerOnePoints"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toStartOf="@id/guideline6"/>
+
+    <TextView
+        android:id="@+id/playerPoint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ToolbarTicTacToe"
+        android:fontFamily="monospace"
+        android:text="@string/tvPlayerTwoPoints"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
+        app:layout_constraintStart_toEndOf="@id/guideline7"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolbarTicTacToe"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/deepSkyBlue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:titleTextColor="@color/black">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton4"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton1"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton6"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton2"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton7"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton1"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton8"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton4"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton2"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/ttcButton9"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton5"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton3"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton4"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/ttcButton9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton7"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton5"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ttcButton9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_15sdp"
+        app:elevation="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline5"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/ttcButton8"
+        app:layout_constraintTop_toBottomOf="@id/ttcButton6"
+        app:strokeColor="@color/deepSkyBlue"
+        app:strokeWidth="@dimen/_2sdp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

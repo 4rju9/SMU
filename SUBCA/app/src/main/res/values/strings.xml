@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">SMU</string>
+    <string name="tvMain">Title</string>
+    <string name="tvDescription">Description</string>
+    <string name="tvClick">Click Here</string>
+    <string name="ivDescription">Image View</string>
+    <string name="tvWeek">Days</string>
+    <string name="tvDayDetails">Subjects</string>
+    <string name="tvTimeDayDetail">Time</string>
+    <string name="tvPhoneNumberLabel">Phone Number</string>
+    <string name="tvEmailLabel">Email</string>
+    <string name="tvStaffRoomLabel">Staff Room</string>
+    <string name="tvDeveloperName">Arjun Gangwar</string>
+    <string name="tvDeveloperRole">Android Developer</string>
+    <string name="tvDeveloperLocation">Uttarakhand, India</string>
+    <string name="tvDeveloperBio">when i first wrote this code, only god and i\nunderstood what i did, now only god knows.</string>
+    <string name="activityNoteTitle">Add New Note</string>
+    <string name="addNoteStartingText">Start Writing</string>
+
+    // chat gpt
+    <string name="tvMessage">Message</string>
+    <string name="send_button">Send</string>
+    <string name="tvWelcomeChatGPT">Welcome to Chat Gpt.\nTry it Out Now!!</string>
+
+    // sign in and sign up
+    <string name="emailId">Email Id</string>
+    <string name="password">Password</string>
+    <string name="passwordConfirm">Confirm Password</string>
+    <string name="tvHello">Hello.</string>
+    <string name="signUp">Let\'s get started!</string>
+    <string name="nextButton">Next</string>
+    <string name="skipButton">Skip</string>
+    <string name="alreadyCreateAccountTxt">Already have an account?</string>
+    <string name="loginTxt">Login</string>
+    <string name="signIn">Welcome Back!</string>
+    <string name="dontHaveAccount">Don\'t have an account?</string>
+    <string name="notesBar">Notes</string>
+    <string name="noticeBoardBar">Manage Notice Board</string>
+    <string name="menuBar">Surajmal University</string>
+    <string name="courseLabel">Course</string>
+    <string name="selectCourseLabel">Select Your Course</string>
+    <string name="semesterLabel">Semester</string>
+    <string name="selectSemesterLabel">Select Your Semester</string>
+    <string name="nameLabel">Full name</string>
+    <string name="forgotPasswordButtonTxt">Forgot password?</string>
+    <string name="continueButtonTxt">Continue</string>
+    <string name="nameQuestion">What\'s your name?</string>
+    <string name="emailQuestion">What\'s your email?</string>
+    <string name="emailQuestionTwo">Enter the email where you can be contacted. No on will see this on your profile.</string>
+    <string name="passwordQuestion">Create a password</string>
+    <string name="passwordQuestionTwo">Create a password with at least 6 letters or numbers. it should be something other can\'t guess.</string>
+    <string name="createButtonTxt">Create New Account</string>
+    <string name="tvFindAccount">Find your account</string>
+    <string name="tvFindAccountTwo">Please enter your account email id. You created your account with.</string>
+
+    // developer title array
+    <string name="spinnerTextTwo">Tell us more about you!</string>
+    <string name="tvMainPlainHello">Hello,</string>
+    <string name="textSwipe"><![CDATA[Features]]></string>
+    <string name="textNotice">Notice</string>
+    <string name="textHaveNiceDay">Have a nice day!</string>
+
+    // developer titles array
+    <string name="tvPlayerOnePoints"> Blue Team: 0 </string>
+
+    // developer descriptions array
+    <string name="tvPlayerTwoPoints"> Red Team: 0 </string>
+
+    // course spinner names
+    <string name="textAdd">New</string>
+    <string name="textGuide1">Fill the following fields very carefully!</string>
+    <string name="textGuide2">Note: day and time name should match the day and time in the database.</string>
+    <string name="textGuide3">Note: unique names should be same as unique names inserted in all subjects.</string>
+    <string name="textDay">Day</string>
+    <string name="hintDay">Enter Day: </string>
+    <string name="textTime">Time</string>
+    <string name="hintTime">Enter Time: </string>
+    <string name="hintTitleForSubjects">Enter Subject Name: one at a time!!</string>
+    <string name="hintTitleForUnames">Enter Unique Name: one at a time!!</string>
+    <string name="hintUname">Enter Unique Name: </string>
+    <string name="hintSyllabusTitle">Enter Title: one at a time!!</string>
+    <string name="hintSyllabusContent">Enter Content: one at a time!!</string>
+    <string name="textAddSubject">Append</string>
+    <string name="textEnterTitle">Enter Title:</string>
+    <string name="textEnterMessage">Enter Detailed Message:</string>
+
+    // semester default spinner
+    <string name="textDeleteAll">Delete All</string>
+
+    <string name="title_activity_new_syllabus">NewSyllabus</string>
+
+    <string name="prompt_email">Email</string>
+
+
+    // main menu titles array
+    <string name="prompt_password">Password</string>
+
+
+    // main description array
+    <string name="action_sign_in">Sign in or register</string>
+
+
+    // week names array
+    <string name="action_sign_in_short">Sign in</string>
+
+    // Games single strings
+    <string name="welcome">"Welcome !"</string>
+
+    <string name="invalid_username">Not a valid username</string>
+
+    // Games names array
+    <string name="invalid_password">Password must be >5 characters</string>
+
+
+    // Games description array
+    <string name="login_failed">"Login failed"</string>
+    <string name="report_a_problem">Report a problem\n</string>
+    <string name="briefly_explain">Briefly explain what happened or what\'s not working.</string>
+    <string name="tvSubject">Subject</string>
+    <string name="your_name_Label">Your Name</string>
+    <string name="your_email_label">Your Email</string>
+
+    // Admin panel title arary
+    <string-array name="developerTitles">
+        <item>Email</item>
+        <item>Website</item>
+        <item>Skills</item>
+        <item>Certificates</item>
+    </string-array>
+
+    // Buttons Texts.
+    <string-array name="developerDesc">
+        <item>dev-4rju9@outlook.com</item>
+        <item>4rju9.netlify.app</item>
+        <item>Jetpack Compose\nKotlin\nJava\nC\nC++\nPython</item>
+        <item>Hackerrank - Python</item>
+    </string-array>
+    <string-array name="course_name_array">
+        <item>Select Your Course</item>
+        <item>"Bachelors\'s in Computer Application"</item>
+        <item>"Bachelor of Technology [CS]"</item>
+        <item>"Bachelor of Business Administration"</item>
+        <item>"Food Technology"</item>
+    </string-array>
+    <string-array name="default_semester_array">
+        <item>Select Your Semester</item>
+    </string-array>
+    <string-array name="six_semester_array">
+        <item>Select Your Semester</item>
+        <item>First Semester</item>
+        <item>Second Semester</item>
+        <item>Third Semester</item>
+        <item>Fourth Semester</item>
+        <item>Fifth Semester</item>
+        <item>Sixth Semester</item>
+    </string-array>
+    <string-array name="eight_semester_array">
+        <item>Select Your Semester</item>
+        <item>First Semester</item>
+        <item>Second Semester</item>
+        <item>Third Semester</item>
+        <item>Fourth Semester</item>
+        <item>Fifth Semester</item>
+        <item>Sixth Semester</item>
+        <item>Seventh Semester</item>
+        <item>Eight Semester</item>
+    </string-array>
+    <string-array name="Main">
+        <item> Time Table </item>
+        <item> Subjects </item>
+        <item> Notes </item>
+        <item> Ask A.I. </item>
+        <item> Developer </item>
+    </string-array>
+    <string-array name="Description">
+        <item> Get to know the classes. </item>
+        <item> The brief syllabus of every subject. </item>
+        <item> Here you can make quick notes.</item>
+        <item> Got any doubts?\nChat GPT is here. </item>
+        <item> About Developer. </item>
+    </string-array>
+    <string-array name="Week">
+        <item> Monday </item>
+        <item> Tuesday </item>
+        <item> Wednesday </item>
+        <item> Thursday </item>
+        <item> Friday </item>
+        <item> Saturday </item>
+    </string-array>
+    <string-array name="games_title">
+        <item> Tic Tac Toe </item>
+    </string-array>
+    <string-array name="games_description">
+        <item> start playing Tic Tac Toe with your mates. </item>
+    </string-array>
+    <string-array name="admin_panel_title">
+        <item> Manage Notice Board </item>
+        <item> Send a Notification </item>
+        <item> Manage Time Table </item>
+        <item> Manage Times </item>
+        <item> Manage Subjects </item>
+        <item> Manage Syllabus </item>
+    </string-array>
+
+    <string name="one_signal_app_id"><![CDATA[b95088a9-0f8b-4164-8287-1e7efd62aa51]]></string>
+    <string name="gemini_api_key"><![CDATA[AIzaSyA_ATwGC-8I0r_a_zAyYogrsjLwUxnWe_U]]></string>
+    <string name="firebase_push_notification_api"><![CDATA[https://fcm.googleapis.com/v1/projects/subca-b22ca/messages:send]]></string>
+
+</resources>

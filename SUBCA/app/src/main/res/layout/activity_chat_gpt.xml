@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteSmoke"
+    tools:context=".ChatGPT">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolbarCharGPT"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:titleTextColor="@color/black"
+        android:background="@color/deepSkyBlue">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat_gpt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@+id/ToolbarCharGPT"/>
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/tvWelcomeChatGPT"
+        android:gravity="center"
+        android:textSize="@dimen/_25sdp"/>
+
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/message_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toStartOf="@id/send_button"
+            android:background="@drawable/rounded_corner"
+            android:hint="@string/tvMessage"
+            android:padding="@dimen/_16sdp"
+            android:paddingStart="@dimen/_22sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:textColor="@color/black"/>
+
+        <ImageButton
+            android:id="@+id/send_button"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignTop="@id/message_edit_text"
+            android:layout_alignBottom="@id/message_edit_text"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/send_button"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_baseline_send_24"
+            tools:ignore="ImageContrastCheck"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

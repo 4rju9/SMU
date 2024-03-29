@@ -1,0 +1,71 @@
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvMainSingleItem"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    app:cardElevation="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/deepSkyBlue"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_15sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/SingleItemMainRvOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivMain"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:contentDescription="@string/ivDescription"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/tvMain"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/tvMain"
+                android:textSize="@dimen/_22sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvDescription"
+            android:layout_below="@id/SingleItemMainRvOne"
+            android:textSize="@dimen/_20sdp" />
+
+        <TextView
+            android:layout_below="@id/tvDescription"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvClick"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textSize="@dimen/_16sdp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

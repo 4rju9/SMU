@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:layout_marginVertical="@dimen/_8sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_8sdp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/ivGamesSingleItem"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_margin="@dimen/_8sdp" />
+
+        <TextView
+            android:id="@+id/tv_games_title_single_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvMain"
+            android:textSize="@dimen/_24sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_alignTop="@id/ivGamesSingleItem"
+            android:layout_toEndOf="@id/ivGamesSingleItem" />
+
+        <TextView
+            android:id="@+id/tv_games_description_single_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvDescription"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_below="@id/tv_games_title_single_item"
+            android:layout_toEndOf="@id/ivGamesSingleItem"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

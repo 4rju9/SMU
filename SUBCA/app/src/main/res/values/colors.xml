@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#1a1a1a</color>
+    <color name="deepBlack">#000000</color>
+    <color name="fadeBlack">#434343</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whiteSmoke">#F5F5F5</color>
+    <color name="fadeWhite">#979797</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="deepSkyBlue">#00bef7</color>
+    <color name="lightSkyBlue">#A600BEF7</color>
+    <color name="kawaiRed">#cc0000</color>
+    <color name="midnighCityOne">#232526</color>
+    <color name="midnighCityTwo">#414345</color>
+    <color name="violet">#8e54e9</color>
+    <color name="purple">#7f00ff</color>
+    <color name="pink">#e100ff</color>
+
+    <string-array name="colors" translatable="false">
+        <item>#33b5e5</item>
+        <item>#547bca</item>
+        <item>#e100ff</item>
+        <item>#9933cc</item>
+        <item>#669900</item>
+        <item>#aeb857</item>
+        <item>#cc0000</item>
+        <item>#ff4444</item>
+        <item>#ae6b23</item>
+        <item>#ff8800</item>
+        <item>#ffbb33</item>
+        <item>#7ada2b</item>
+    </string-array>
+
+</resources>

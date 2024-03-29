@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deepSkyBlue"
+    android:padding="@dimen/_15sdp"
+    tools:context=".NoteDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/page_title"
+            android:text="@string/activityNoteTitle"
+            android:textSize="@dimen/_32sdp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:id="@+id/save_note_button"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_done_24"
+            app:tint="@color/white"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageButton
+            android:id="@+id/delete_note_button"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            android:layout_toStartOf="@id/save_note_button"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:tint="@color/white"
+            android:visibility="gone"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/addNoteFormLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar_layout"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_26sdp"
+        android:backgroundTint="@color/whiteSmoke"
+        android:background="@drawable/rounded_corner_two">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_notes_title_text"
+            android:background="@null"
+            android:hint="@string/tvMain"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:padding="@dimen/_12sdp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_notes_content_text"
+            android:background="@null"
+            android:hint="@string/addNoteStartingText"
+            android:textSize="@dimen/_20sdp"
+            android:minLines="20"
+            android:gravity="top"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:padding="@dimen/_12sdp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

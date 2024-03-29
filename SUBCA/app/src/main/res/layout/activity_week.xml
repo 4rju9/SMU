@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteSmoke"
+    tools:context=".WeekActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ToolbarWeek"
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/black"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/deepSkyBlue">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWeek"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_below="@id/ToolbarWeek"
+        tools:listitem="@layout/activity_week_single_item"
+        android:dividerHeight="@dimen/_10sdp"
+        android:divider="@null">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

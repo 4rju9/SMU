@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/menuButton"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/rounded_corner_three"
+        android:src="@drawable/ic_baseline_menu_24"
+        app:layout_constraintBottom_toTopOf="@+id/tvHelloMain"
+        app:layout_constraintRight_toLeftOf="@id/GMV1end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/tvHelloMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvMainPlainHello"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_40sdp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintTop_toBottomOf="@+id/menuButton" />
+
+    <TextView
+        android:id="@+id/tvMainUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_toEndOf="@id/tvHelloMain"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_40sdp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvHelloMain"
+        app:layout_constraintLeft_toRightOf="@id/tvHelloMain" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHelloMain"
+        android:text="@string/textHaveNiceDay"
+        android:textSize="@dimen/_27sdp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/GMH2"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintTop_toBottomOf="@+id/tvHelloMain" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/BMH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="viewKillerMain1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupMain1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="cvMainNoticeBoard, cvContent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMH1start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMH1end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.977" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMV1start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GMV1end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.965" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:divider="@null"
+        android:dividerHeight="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/BMH1"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintRight_toLeftOf="@id/GMV1end"
+        app:layout_constraintTop_toBottomOf="@id/cvMainSimpleTextOne"
+        tools:listitem="@layout/main_activity_single_item" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMainSimpleTextOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintTop_toBottomOf="@id/GMH2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:text="@string/textSwipe"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="normal" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/viewKillerMain1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintTop_toTopOf="@id/cvMainNoticeBoard"
+        app:layout_constraintBottom_toTopOf="@id/GMH1end"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvMainNoticeBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/cvContent"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintTop_toBottomOf="@id/GMH3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:text="@string/textNotice"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="normal" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_20sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/GMH1end"
+        app:layout_constraintLeft_toRightOf="@id/GMV1start"
+        app:layout_constraintRight_toLeftOf="@id/GMV1end"
+        app:layout_constraintTop_toBottomOf="@id/cvMainNoticeBoard">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tvNoticeBoardContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="normal" />
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

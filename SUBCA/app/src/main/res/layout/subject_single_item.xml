@@ -1,0 +1,38 @@
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:layout_marginVertical="@dimen/_8sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp">
+
+        <com.example.arjun.su_bca.Utils.LetterImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/ivLetterSubject"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_margin="@dimen/_8sdp" />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tvSubject"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_toEndOf="@id/ivLetterSubject"
+            android:text="@string/tvWeek"
+            android:textSize="@dimen/_24sdp"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
