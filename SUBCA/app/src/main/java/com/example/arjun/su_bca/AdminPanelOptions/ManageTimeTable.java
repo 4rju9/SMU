@@ -19,7 +19,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.Utils.TimeTableFromFireStoreModel;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;

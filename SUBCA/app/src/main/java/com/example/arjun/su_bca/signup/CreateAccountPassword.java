@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.Utils.UserCredentialsModel;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

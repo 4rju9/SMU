@@ -1,11 +1,8 @@
 package com.example.arjun.su_bca.AdminPanelOptions;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -14,9 +11,7 @@ import android.widget.ImageButton;
 import com.example.arjun.su_bca.MainActivity;
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.Utils.NoticeBoardContentModel;
-import com.example.arjun.su_bca.utility;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ManageNoticeBoard extends AppCompatActivity {

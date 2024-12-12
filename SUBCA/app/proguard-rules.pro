@@ -20,6 +20,31 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class org.apache.** { *; }
--keep class com.example.arjun.su_bca.Note
--keep class com.example.arjun.su_bca.Utils.*
+#-keep class org.apache.** { *; }
+#
+## Keep Firebase-specific classes and methods
+#-keep class com.google.firebase.** { *; }
+#-keep class com.google.android.gms.** { *; }
+#-keep class com.google.firebase.messaging.** { *; }
+#
+## Keep GoogleCredentials and related classes
+#-keep class com.google.auth.oauth2.** { *; }
+#
+## Keep classes annotated with @Keep or @IgnoreExtraProperties
+#-keep @com.google.firebase.database.IgnoreExtraProperties class * { *; }
+#-keep @com.google.firebase.messaging.FirebaseMessagingService class * { *; }
+#-keep @com.google.firebase.messaging.RemoteMessage class * { *; }
+#
+#-keep class com.example.arjun.su_bca.R$raw { *; }
+#
+## Keep Volley related classes
+#-keep class com.android.volley.** { *; }
+#-keep class com.android.volley.toolbox.** { *; }
+## Keep classes using reflection or specific method signatures
+#-keep class com.example.arjun.su_bca.Utils.VolleyRequestQueue { *; }
+#
+## Keep data model classes (add your package name)
+#-keepclassmembers class com.example.arjun.su_bca.** {
+#    <fields>;
+#    <methods>;
+#}

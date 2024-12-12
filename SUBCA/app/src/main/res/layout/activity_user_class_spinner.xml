@@ -32,7 +32,9 @@
     <Spinner
         android:id="@+id/selectCourse"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/custom_spinner"
+        android:dropDownVerticalOffset="@dimen/_40sdp"
         app:layout_constraintBottom_toTopOf="@id/tvSemesterLabel"
         app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
         app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"
@@ -41,7 +43,9 @@
     <Spinner
         android:id="@+id/selectSemester"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/custom_spinner"
+        android:dropDownVerticalOffset="@dimen/_40sdp"
         app:layout_constraintBottom_toTopOf="@id/spinnerNextButton"
         app:layout_constraintLeft_toRightOf="@id/spinnerGV1start"
         app:layout_constraintRight_toLeftOf="@id/spinnerGV1end"

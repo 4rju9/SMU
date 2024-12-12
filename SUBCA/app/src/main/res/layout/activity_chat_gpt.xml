@@ -23,6 +23,8 @@
         android:layout_marginRight="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
+        tools:listitem="@layout/chat_item"
+        tools:itemCount="6"
         android:layout_above="@id/bottom_layout"
         android:layout_below="@+id/ToolbarCharGPT"/>
 
@@ -54,7 +56,8 @@
             android:padding="@dimen/_16sdp"
             android:paddingStart="@dimen/_22sdp"
             android:paddingEnd="@dimen/_10sdp"
-            android:textColor="@color/black"/>
+            android:maxLines="3"
+            android:textColor="@color/black" />
 
         <ImageButton
             android:id="@+id/send_button"

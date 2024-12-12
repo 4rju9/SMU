@@ -4,12 +4,11 @@ import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 
 import com.example.arjun.su_bca.R;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.onesignal.OneSignal;
 
 public class MyApplication extends Application {

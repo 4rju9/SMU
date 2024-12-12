@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import com.example.arjun.su_bca.Utils.MessageChatGPT;
 import com.example.arjun.su_bca.Utils.MessageChatGPTAdapter;
+import com.example.arjun.su_bca.Utils.utility;
 import com.example.arjun.su_bca.games.GamesActivity;
 import com.google.ai.client.generativeai.GenerativeModel;
 import com.google.ai.client.generativeai.java.GenerativeModelFutures;

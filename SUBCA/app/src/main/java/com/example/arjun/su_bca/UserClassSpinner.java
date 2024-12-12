@@ -1,13 +1,11 @@
 package com.example.arjun.su_bca;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,6 +25,7 @@ import com.example.arjun.su_bca.Utils.SubjectsFromFireStoreModel;
 import com.example.arjun.su_bca.Utils.SyllabusFromFireStoreModel;
 import com.example.arjun.su_bca.Utils.TimeTableFromFireStoreModel;
 import com.example.arjun.su_bca.Utils.TimesFromFireStoreModel;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;

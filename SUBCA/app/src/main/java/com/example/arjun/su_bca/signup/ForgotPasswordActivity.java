@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.arjun.su_bca.R;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotPasswordActivity extends AppCompatActivity {

@@ -1,9 +1,8 @@
 package com.example.arjun.su_bca.services;
 
-import android.graphics.BitmapFactory;
 import androidx.annotation.NonNull;
-import com.example.arjun.su_bca.R;
-import com.example.arjun.su_bca.utility;
+
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

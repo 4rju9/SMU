@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.Utils.TimesFromFireStoreModel;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;

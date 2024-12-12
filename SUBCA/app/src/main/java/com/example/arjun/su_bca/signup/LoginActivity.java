@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.UserClassSpinner;
 import com.example.arjun.su_bca.Utils.UserCredentialsModel;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;

@@ -55,9 +55,11 @@ public class DayDetail extends AppCompatActivity {
     }
 
     private void setupRecyclerView() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new TimeTableAdapter();
-        recyclerView.setAdapter(adapter);
+        try {
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            adapter = new TimeTableAdapter();
+            recyclerView.setAdapter(adapter);
+        } catch (Exception ignore) {}
     }
 
 

@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +12,7 @@ import android.widget.EditText;
 
 import com.example.arjun.su_bca.R;
 import com.example.arjun.su_bca.Utils.TimesFromFireStoreModel;
-import com.example.arjun.su_bca.utility;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;

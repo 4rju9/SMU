@@ -1,13 +1,18 @@
 package com.example.arjun.su_bca;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.arjun.su_bca.Utils.VolleyRequestQueue;
+import com.example.arjun.su_bca.Utils.utility;
 import com.google.auth.oauth2.GoogleCredentials;
+
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -78,13 +83,13 @@ public class CreateNotification extends AppCompatActivity {
                 getResources().getString(R.string.firebase_push_notification_api),
                 mainBody,
                 response -> {
-                    print("Notification sent.");
+                    runOnUiThread(() -> utility.showToast(CreateNotification.this, "Notification sent."));
                     title.setText("");
                     body.setText("");
                     finish();
                 },
                 error -> {
-                    print("An unknown error occurred, try again later!");
+                    runOnUiThread(() -> utility.showToast(CreateNotification.this, error.getLocalizedMessage()));
                 }
         ) {
             @Override
@@ -98,10 +103,6 @@ public class CreateNotification extends AppCompatActivity {
 
         queue.getQueue().add(request);
 
-    }
-
-    private void print(String string) {
-        System.out.println(string);
     }
 
 }
