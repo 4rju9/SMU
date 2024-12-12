@@ -32,7 +32,7 @@
             android:layout_height="@dimen/_40sdp"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_delete_forever_24"
+            android:src="@drawable/ic_delete_forever"
             app:tint="@color/black"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:background="@drawable/rounded_corner_black_stroke"/>

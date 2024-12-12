@@ -130,14 +130,14 @@
 
     // Buttons Texts.
     <string-array name="developerDesc">
-        <item>dev-4rju9@outlook.com</item>
+        <item>ohinarendra3550@gmail.com</item>
         <item>4rju9.netlify.app</item>
         <item>Jetpack Compose\nKotlin\nJava\nC\nC++\nPython</item>
         <item>Hackerrank - Python</item>
     </string-array>
     <string-array name="course_name_array">
         <item>Select Your Course</item>
-        <item>"Bachelors\'s in Computer Application"</item>
+        <item>"Bachelors\'s of Computer Applications"</item>
         <item>"Bachelor of Technology [CS]"</item>
         <item>"Bachelor of Business Administration"</item>
         <item>"Food Technology"</item>

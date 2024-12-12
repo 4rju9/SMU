@@ -68,7 +68,7 @@
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/send_button"
             android:padding="@dimen/_8sdp"
-            android:src="@drawable/ic_baseline_send_24"
+            android:src="@drawable/ic_send"
             tools:ignore="ImageContrastCheck"/>
 
     </RelativeLayout>

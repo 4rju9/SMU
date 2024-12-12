@@ -11,7 +11,7 @@
         android:layout_width="@dimen/_35sdp"
         android:layout_height="@dimen/_35sdp"
         android:background="@drawable/rounded_corner_three"
-        android:src="@drawable/ic_baseline_menu_24"
+        android:src="@drawable/ic_menu"
         app:layout_constraintBottom_toTopOf="@+id/tvHelloMain"
         app:layout_constraintRight_toLeftOf="@id/GMV1end"
         app:layout_constraintTop_toTopOf="parent"
