@@ -1,40 +1,51 @@
 plugins {
-    id 'com.android.application'
-    id 'com.google.gms.google-services'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.ksp)
 }
 
 android {
-
     namespace 'com.example.arjun.su_bca'
-    compileSdk 34
+
+    compileSdk 35
+
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.example.arjun.su_bca"
         minSdk 24
         targetSdk 34
+
         versionCode 7
         versionName "3.1"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            proguardFiles(
+                    getDefaultProguardFile('proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+            )
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
-    packagingOptions {
-        exclude 'META-INF/atomicfu.kotlin_module'
-        exclude("META-INF/DEPENDENCIES")
+    packaging {
+        resources {
+            excludes += [
+                    'META-INF/atomicfu.kotlin_module',
+                    'META-INF/DEPENDENCIES',
+                    'META-INF/INDEX.LIST'
+            ]
+        }
     }
 
     lint {
@@ -47,49 +58,45 @@ android {
 }
 
 dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
 
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    testImplementation libs.junit
 
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
 
-    def room_version = "2.6.1"
+    // Firebase
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebaseui.firestore
+    implementation libs.firebase.firestore
+    implementation libs.firebase.auth
+    implementation libs.firebase.database
+    implementation libs.firebase.messaging
 
-    // firebase
-    implementation platform('com.google.firebase:firebase-bom:32.2.3')
-    implementation 'com.google.firebase:firebase-config-ktx'
-    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
-    implementation 'com.google.firebase:firebase-firestore-ktx'
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.firebase:firebase-database-ktx'
-    implementation 'com.google.firebase:firebase-messaging'
+    // CardView
+    implementation libs.androidx.cardview
 
-    // card view
-    implementation "androidx.cardview:cardview:1.0.0"
+    // CircleImageView
+    implementation libs.circleimageview
 
-    // circle imageview
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // Volley
+    implementation libs.volley
 
-    // volley library
-    implementation 'com.android.volley:volley:1.2.1'
+    // Room
+    implementation libs.room.runtime
+    implementation libs.room.ktx
+    ksp libs.room.compiler
 
-    // Room Database setup libraries
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
+    // OneSignal
+    implementation libs.onesignal
 
-    // To use Kotlin annotation processing tool (kapt)
-    kapt "androidx.room:room-compiler:$room_version"
+    // Google AI
+    implementation libs.generativeai
 
-    // onesignal - for push notifications
-    implementation 'com.onesignal:OneSignal:[5.0.0, 5.99.99]'
-
-    // add the dependency for the Google AI client SDK for Android
-    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
-
-    implementation 'com.google.auth:google-auth-library-oauth2-http:0.26.0'
-
+    // Google Auth
+    implementation(libs.google.auth) {
+        exclude group: "io.grpc"
+    }
 }

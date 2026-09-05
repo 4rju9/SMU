@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,16 +17,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.arjun.su_bca.Utils.NoticeBoardContentModel;
-import com.example.arjun.su_bca.Utils.ReportAProblemActivity;
-import com.example.arjun.su_bca.Utils.utility;
-import com.example.arjun.su_bca.signup.LoginActivity;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,9 +27,21 @@ import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
+import com.android.volley.Request;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.arjun.su_bca.Utils.NoticeBoardContentModel;
+import com.example.arjun.su_bca.Utils.ReportAProblemActivity;
+import com.example.arjun.su_bca.Utils.VolleyRequestQueue;
+import com.example.arjun.su_bca.Utils.utility;
+import com.example.arjun.su_bca.signup.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
-    private FirebaseRemoteConfig remoteConfig;
+import org.json.JSONArray;
+
+public class MainActivity extends AppCompatActivity {
     private ImageButton menuButton;
     private TextView noticeBoard;
     private boolean shouldUpdateNotice = true;
@@ -132,56 +134,167 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkForUpdates() {
-        try {
-            int currentVersionCode = getCurrentVersionCode();
 
-            remoteConfig = FirebaseRemoteConfig.getInstance();
-            FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                    .setMinimumFetchIntervalInSeconds(5)
-                    .build();
+        String updateUrl = "https://livetv.4rju9.workers.dev/smu/update";
 
-            remoteConfig.setConfigSettingsAsync(configSettings);
-            remoteConfig.fetchAndActivate().addOnCompleteListener(task -> {
-                if(task.isSuccessful()) {
-                    String[] data = remoteConfig.getString("new_version_code").split(" ");
-                    int latestVersionCode = Integer.parseInt(data[0]);
-                    if(latestVersionCode > currentVersionCode) {
-                        showUpdateDialog(currentVersionCode, latestVersionCode, data[1]);
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.GET,
+                updateUrl,
+                null,
+
+                response -> {
+                    try {
+                        int currentVersionCode = getCurrentVersionCode();
+
+                        int latestVersionCode =
+                                response.optInt("latestVersionCode", -1);
+
+                        String title = response.optString(
+                                "title",
+                                "New Update Available!"
+                        );
+
+                        String downloadUrl = response.optString(
+                                "url",
+                                ""
+                        );
+
+                        String footNote = response.optString(
+                                "footNote",
+                                ""
+                        );
+
+                        JSONArray releaseNotesArray =
+                                response.optJSONArray("releaseNotes");
+
+                        StringBuilder releaseNotes =
+                                new StringBuilder();
+
+                        if (releaseNotesArray != null) {
+                            for (int i = 0;
+                                 i < releaseNotesArray.length();
+                                 i++) {
+
+                                String note =
+                                        releaseNotesArray.optString(i, "");
+
+                                if (!note.isEmpty()) {
+                                    releaseNotes
+                                            .append(note)
+                                            .append("\n");
+                                }
+                            }
+                        }
+
+                        if (latestVersionCode > currentVersionCode
+                                && !downloadUrl.isEmpty()) {
+
+                            showUpdateDialog(
+                                    currentVersionCode,
+                                    latestVersionCode,
+                                    title,
+                                    releaseNotes.toString().trim(),
+                                    footNote,
+                                    downloadUrl
+                            );
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
+                },
+
+                error -> {
+                    // Update check failed.
+                    // Don't interrupt the user.
+                    error.printStackTrace();
                 }
-            });
-        } catch (Exception ignored) {
-        }
+        );
+
+        VolleyRequestQueue
+                .getInstance(this)
+                .getQueue()
+                .add(request);
     }
 
-    private void showUpdateDialog(int current, int latest, String url) {
+    private void showUpdateDialog(
+            int current,
+            int latest,
+            String title,
+            String releaseNotes,
+            String footNote,
+            String url
+    ) {
+
+        StringBuilder message = new StringBuilder();
+
+        message.append("The current version of your app is ")
+                .append(current)
+                .append(".\n");
+
+        message.append("The latest version of the app is ")
+                .append(latest)
+                .append(".\n\n");
+
+        if (!releaseNotes.isEmpty()) {
+            message.append(releaseNotes);
+        }
+
+        if (!footNote.isEmpty()) {
+            message.append("\n\n")
+                    .append(footNote);
+        }
+
         final AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("New Update Available!")
-                .setMessage("The current version of your app is " + current + ".\nThe latest version of the app is " + latest + ".\nNew Features to this app has been added.\nKindly update your app to use them.\n\nNote: You have to update this app to the latest version to use it.\nThank You!")
+                .setTitle(title)
+                .setMessage(message.toString())
                 .setPositiveButton("Update", (dialog1, which) -> {
+
                     try {
-                        Intent intent = new Intent();
-                        intent.setAction(Intent.ACTION_VIEW);
-                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                        intent.setData(Uri.parse(url));
+                        Intent intent = new Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse(url)
+                        );
+
+                        intent.addCategory(
+                                Intent.CATEGORY_BROWSABLE
+                        );
+
                         startActivity(intent);
-                    } catch(Exception e) {
-                        Toast.makeText(getApplicationContext(), "Something went wrong.\nTry again later!", Toast.LENGTH_SHORT).show();
+
+                    } catch (Exception e) {
+
+                        Toast.makeText(
+                                getApplicationContext(),
+                                "Something went wrong.\nTry again later!",
+                                Toast.LENGTH_SHORT
+                        ).show();
                     }
                 })
+                .setNegativeButton("Later", null)
                 .show();
+
         dialog.setCancelable(false);
     }
 
     private int getCurrentVersionCode() {
-        PackageInfo packageInfo = null;
         try {
-            packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch (Exception e) {
-            Log.d("myApp", e.getMessage());
-        }
+            PackageInfo packageInfo =
+                    getPackageManager().getPackageInfo(
+                            getPackageName(),
+                            0
+                    );
 
-        return packageInfo.versionCode;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                return (int) packageInfo.getLongVersionCode();
+            }
+
+            return packageInfo.versionCode;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 
     @SuppressLint("SetTextI18n")

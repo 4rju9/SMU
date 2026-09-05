@@ -13,6 +13,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 
 import org.json.JSONObject;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -58,7 +59,7 @@ public class CreateNotification extends AppCompatActivity {
 
     private String getAccessToken() throws IOException {
         GoogleCredentials googleCredentials = GoogleCredentials
-                .fromStream(getResources().openRawResource(R.raw.firebase))
+                .fromStream(new FileInputStream("service-account.json"))
                 .createScoped(Arrays.asList(SCOPES));
         googleCredentials.refresh();
         return googleCredentials.getAccessToken().getTokenValue();
