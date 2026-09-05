@@ -20,7 +20,7 @@
 (after that downloading follow the steps below)
 
 
-**Step 1** => Download the APK [Click To Download](https://index.4rju9.workers.dev/0:/timeTableApp/app-release.apk)
+**Step 1** => Download the APK [Click To Download](https://github.com/4rju9/SMU/releases/download/download/SMU.apk)
 
 **Step 2** => Go to download section of your browser / Or find the APK file in your phone's storage
 
